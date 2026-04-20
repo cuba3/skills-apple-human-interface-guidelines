@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Unified night palette.
+         Keys are kept 1:1 with values/colors.xml for day/night controllability. -->
+
+    <!-- Semantic base colors -->
+    <color name="login_bg_color">#1C1C1E</color>
+    <color name="default_tr">@color/transparent_black_00</color>
+    <color name="default_bg">@color/sys_gray6</color>
+    <color name="wk_btn">@color/sys_blue</color>
+    <color name="color_sas">#FFE87D</color>
+    <item name="vip_info_item_remove_title" type="color">@color/vip_golden</item>
+    <item name="vip_info_item_remove_bg" type="color">@color/vip_bg</item>
+    <color name="home_top_vip_1">#400A84FF</color>
+    <color name="home_top_vip_2">#405E5CE6</color>
+    <color name="sys_orange_40">#40FF9F0A</color>
+    <color name="home_top_vip_4">#40FF453A</color>
+
+    <color name="sys_red">#FF453A</color>
+    <color name="sys_orange">#FF9F0A</color>
+    <color name="sys_yellow">#FFD60A</color>
+    <color name="sys_green">#30D158</color>
+    <color name="sys_mint">#66D4CF</color>
+    <color name="sys_teal">#40C8E0</color>
+    <color name="sys_cyan">#64D2FF</color>
+    <color name="sys_blue">#0A84FF</color>
+    <color name="sys_indigo">#5E5CE6</color>
+    <color name="sys_purple">#BF5AF2</color>
+    <color name="sys_pink">#FF375F</color>
+    <color name="sys_brown">#AC8E68</color>
+    <color name="vip_golden">#FFBE6B</color>
+    <color name="vip_bg">#6F2C02</color>
+
+    <color name="sys_gray1">#8E8E93</color>
+    <color name="sys_gray2">#636366</color>
+    <color name="sys_gray3">#48484A</color>
+    <color name="sys_gray4">#3A3A3C</color>
+    <color name="sys_gray5">#2C2C2E</color>
+    <color name="sys_gray6">#1C1C1E</color>
+
+    <color name="sys_black">#FFFFFF</color>
+    <color name="sys_white">#000000</color>
+
+    <color name="sys_red_20">#33FF453A</color>
+
+    <color name="sys_black_25">#40FFFFFF</color>
+    <color name="sys_black_50">#80FFFFFF</color>
+    <color name="sys_black_75">#C0FFFFFF</color>
+
+    <color name="transparent_black_00">#00000000</color>
+
+    <color name="transparent_white_25">#40000000</color>
+    <color name="transparent_white_50">#80000000</color>
+    <color name="transparent_white_75">#C0000000</color>
+
+    <color name="transparent_blue_10">#1A0A84FF</color>
+    <color name="transparent_blue_20">#330A84FF</color>
+    <color name="transparent_blue_50">#800A84FF</color>
+
+    <color name="transparent_red_25">#40FF453A</color>
+    <color name="transparent_red_50">#80FF453A</color>
+
+    <color name="transparent_orange_25">#40FF9F0A</color>
+    <color name="transparent_orange_50">#80FF9F0A</color>
+
+    <color name="transparent_yellow_25">#40FFD60A</color>
+    <color name="transparent_yellow_50">#80FFD60A</color>
+
+    <color name="transparent_brown_25">#40AC8E68</color>
+    <color name="transparent_brown_50">#80AC8E68</color>
+
+    <color name="transparent_cyan_25">#4064D2FF</color>
+    <color name="transparent_cyan_50">#8064D2FF</color>
+
+    <color name="transparent_green_25">#4030D158</color>
+    <color name="transparent_green_50">#8030D158</color>
+</resources>

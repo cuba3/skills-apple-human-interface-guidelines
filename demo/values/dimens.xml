@@ -1,0 +1,109 @@
+<resources>
+    <!-- Unified dimens spec
+         - New development should prefer the normalized keys in this file.
+         - Legacy keys are kept as compatibility aliases and are marked as deprecated. -->
+
+    <!-- Spacing system (base = 8dp) -->
+    <dimen name="space_0">0dp</dimen>
+    <dimen name="space_0_5x">4dp</dimen>
+    <dimen name="space_1x">8dp</dimen>
+    <dimen name="space_1_5x">12dp</dimen>
+    <dimen name="space_2x">16dp</dimen>
+    <dimen name="space_3x">24dp</dimen>
+    <dimen name="space_4x">32dp</dimen>
+    <dimen name="space_5x">40dp</dimen>
+    <dimen name="space_6x">48dp</dimen>
+    <dimen name="space_8x">64dp</dimen>
+
+    <!-- Radius and stroke -->
+    <dimen name="radius_round_full">512dp</dimen>
+    <dimen name="radius_m">12dp</dimen>
+    <dimen name="radius_l">24dp</dimen>
+    <dimen name="stroke_width_default">3dp</dimen>
+    <dimen name="elevation_bottom_navigation_bar">8dp</dimen>
+
+    <!-- Typography (SP)
+         Reference: Apple HIG typography legibility and hierarchy.
+         Use Regular/Medium/Semibold/Bold weights, avoid thin weights for small text. -->
+    <dimen name="text_display_l">22sp</dimen>
+    <dimen name="text_title_l">20sp</dimen>
+    <dimen name="text_title_m">18sp</dimen>
+    <dimen name="text_body_l">17sp</dimen>
+    <dimen name="text_body_m">16sp</dimen>
+    <dimen name="text_body_s">14sp</dimen>
+    <dimen name="text_note_m">12sp</dimen>
+    <dimen name="text_note_s">11sp</dimen>
+    <dimen name="text_caption">10sp</dimen>
+
+    <!-- iOS style aliases -->
+    <dimen name="largeTitle">@dimen/text_title_l</dimen>
+    <dimen name="title">@dimen/text_body_m</dimen>
+    <dimen name="headline">@dimen/text_body_m</dimen>
+    <dimen name="body">@dimen/text_body_m</dimen>
+    <dimen name="subhead">@dimen/text_body_s</dimen>
+    <dimen name="footnote">@dimen/text_note_m</dimen>
+    <dimen name="caption">@dimen/text_caption</dimen>
+
+    <!-- Android semantic aliases -->
+    <dimen name="large_text_size">@dimen/largeTitle</dimen>
+    <dimen name="medium_bold_text_size">@dimen/headline</dimen>
+    <dimen name="medium_text_size">@dimen/body</dimen>
+    <dimen name="small_text_size">@dimen/subhead</dimen>
+    <dimen name="medium_subtext_size">@dimen/footnote</dimen>
+    <dimen name="small_subtext_size">@dimen/caption</dimen>
+
+    <!-- Layout height system (for list / flow adaptive layouts) -->
+    <dimen name="layout_height_xs">30dp</dimen>
+    <dimen name="layout_height_s">40dp</dimen>
+    <dimen name="layout_height_m">48dp</dimen>
+    <dimen name="layout_height_l">56dp</dimen>
+    <dimen name="layout_height_xl">64dp</dimen>
+    <dimen name="layout_height_xxl">96dp</dimen>
+
+    <!-- Icon size system -->
+    <dimen name="icon_xs_16">16dp</dimen>
+    <dimen name="icon_s_20">20dp</dimen>
+    <dimen name="icon_m_24">24dp</dimen>
+    <dimen name="icon_l_32">32dp</dimen>
+    <dimen name="icon_xl_40">40dp</dimen>
+    <dimen name="icon_xxl_48">48dp</dimen>
+    <dimen name="icon_display_60">60dp</dimen>
+
+    <!-- Avatar size system -->
+    <dimen name="avatar_xs_24">24dp</dimen>
+    <dimen name="avatar_s_32">32dp</dimen>
+    <dimen name="avatar_m_40">40dp</dimen>
+    <dimen name="avatar_l_48">48dp</dimen>
+    <dimen name="avatar_xl_64">64dp</dimen>
+    <dimen name="avatar_xxl_80">80dp</dimen>
+    <dimen name="avatar_display_96">96dp</dimen>
+
+    <!-- Dialog size -->
+    <dimen name="dialog_home_vip_width">328dp</dimen>
+    <dimen name="dialog_home_vip_height">572dp</dimen>
+    <dimen name="dialog_vip_coupon_width">328dp</dimen>
+    <dimen name="dialog_vip_coupon_height">450dp</dimen>
+
+    <!-- Legacy aliases (deprecated for new UI development) -->
+    <dimen name="padding1x">@dimen/space_1x</dimen>
+    <dimen name="padding1.5x">@dimen/space_1_5x</dimen>
+    <dimen name="margin0.5x">@dimen/space_0_5x</dimen>
+    <dimen name="margin1x">@dimen/space_1x</dimen>
+    <dimen name="margin2x">@dimen/space_2x</dimen>
+    <dimen name="margin3x">@dimen/space_3x</dimen>
+
+    <dimen name="circleRadius">@dimen/radius_round_full</dimen>
+    <dimen name="defaultBgRadius">@dimen/radius_m</dimen>
+    <dimen name="defaultBgRadius2x">@dimen/radius_l</dimen>
+    <dimen name="strokeWidth">@dimen/stroke_width_default</dimen>
+    <dimen name="elevationBottomNavigationBar">@dimen/elevation_bottom_navigation_bar</dimen>
+
+    <dimen name="medium_icon_size">@dimen/icon_display_60</dimen>
+    <dimen name="small_icon_size">30dp</dimen>
+    <dimen name="icon_s_24">@dimen/icon_m_24</dimen>
+    <dimen name="icon_m_36">36dp</dimen>
+    <dimen name="icon_l_48">@dimen/icon_xxl_48</dimen>
+    <dimen name="icon_xl_60">@dimen/icon_display_60</dimen>
+
+    <!-- Deprecated arbitrary dp scale: do not add new usage -->
+</resources>

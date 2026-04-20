@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Unified day palette.
+         Rule: all new UI colors should use keys from this file only. -->
+
+    <!-- Semantic base colors -->
+    <color name="login_bg_color">#F2F9FF</color>
+    <color name="default_tr">@color/transparent_black_00</color>
+    <color name="default_bg">@color/sys_gray6</color>
+    <color name="wk_btn">@color/sys_blue</color>
+    <color name="color_sas">#FFE87D</color>
+    <item name="vip_info_item_remove_title" type="color">@color/vip_golden</item>
+    <item name="vip_info_item_remove_bg" type="color">@color/vip_bg</item>
+    <color name="home_top_vip_1">#26007AFF</color>
+    <color name="home_top_vip_2">#265856D6</color>
+    <color name="sys_orange_40">#28FF9500</color>
+    <color name="home_top_vip_4">#26FF3B30</color>
+
+    <color name="sys_red">#FF3B30</color>
+    <color name="sys_orange">#FF9500</color>
+    <color name="sys_yellow">#FFCC00</color>
+    <color name="sys_green">#34C759</color>
+    <color name="sys_mint">#00c7be</color>
+    <color name="sys_teal">#30b0c7</color>
+    <color name="sys_cyan">#32ade6</color>
+    <color name="sys_blue">#007AFF</color>
+    <color name="sys_indigo">#5856D6</color>
+    <color name="sys_purple">#AF52DE</color>
+    <color name="sys_pink">#FF2D55</color>
+    <color name="sys_brown">#a2845e</color>
+    <color name="vip_golden">#6F2C02</color>
+    <color name="vip_bg">#FFBE6B</color>
+
+    <color name="vip_receive_title">#FFFADC</color>
+    <color name="intent_debug_bg">#FFF3E0</color>
+    <color name="intent_debug_text">#E65100</color>
+    <color name="login_last_bg">#FFD8D6</color>
+    <color name="vip_gradient_peach_start">#FFBBAB</color>
+    <color name="vip_gradient_peach_end">#FCEBE4</color>
+    <color name="vip_gradient_purple_start">#E1B9FF</color>
+    <color name="vip_gradient_purple_end">#F6EAFF</color>
+    <color name="vip_gradient_blue_start">#C5E0FE</color>
+    <color name="vip_gradient_blue_end">#E7F2FF</color>
+    <color name="vip_gradient_gold_start">#FCE7C5</color>
+    <color name="vip_gradient_gold_end">#FBF2E3</color>
+    <color name="vip_remove_bg_start">#FFE6C5</color>
+    <color name="vip_remove_bg_end">#FCD9A8</color>
+    <color name="outline_gray_979797">#FF979797</color>
+
+
+    <color name="sys_gray1">#8E8E93</color>
+    <color name="sys_gray2">#AEAEB2</color>
+    <color name="sys_gray3">#C7C7CC</color>
+    <color name="sys_gray4">#D1D1D6</color>
+    <color name="sys_gray5">#E5E5EA</color>
+    <color name="sys_gray6">#F2F2F7</color>
+
+    <color name="sys_black">#000000</color>
+    <color name="sys_white">#FFFFFF</color>
+
+    <color name="sys_red_20">#33FF3B30</color>
+
+    <color name="sys_black_25">#40000000</color>
+    <color name="sys_black_50">#80000000</color>
+    <color name="sys_black_75">#C0000000</color>
+    <color name="sys_black_80">#CC000000</color>
+
+    <color name="transparent_black_00">#00000000</color>
+    <color name="transparent_black_10">#1A000000</color>
+
+    <color name="transparent_white_25">#40FFFFFF</color>
+    <color name="transparent_white_12">#1FFFFFFF</color>
+    <color name="transparent_white_50">#80FFFFFF</color>
+    <color name="transparent_white_75">#C0FFFFFF</color>
+
+    <color name="transparent_blue_10">#1a007AFF</color>
+    <color name="transparent_blue_20">#33007AFF</color>
+    <color name="transparent_blue_50">#80007AFF</color>
+    
+    <color name="transparent_red_25">#80FF3B30</color>
+    <color name="transparent_red_50">#40FF3B30</color>
+
+    <color name="transparent_orange_25">#40FF9500</color>
+    <color name="transparent_orange_50">#80FF9500</color>
+
+    <color name="transparent_yellow_25">#40FFCC00</color>
+    <color name="transparent_yellow_50">#80FFCC00</color>
+
+    <color name="transparent_brown_25">#40a2845e</color>
+    <color name="transparent_brown_50">#80a2845e</color>
+
+    <color name="transparent_cyan_25">#4032ade6</color>
+    <color name="transparent_cyan_50">#8032ade6</color>
+
+    <color name="transparent_green_25">#4034C759</color>
+    <color name="transparent_green_50">#8034C759</color>
+
+</resources>
