@@ -4,18 +4,6 @@
          Keys are kept 1:1 with values/colors.xml for day/night controllability. -->
 
     <!-- Semantic base colors -->
-    <color name="login_bg_color">#1C1C1E</color>
-    <color name="default_tr">@color/sys_black_00</color>
-    <color name="default_bg">@color/sys_gray6</color>
-    <color name="wk_btn">@color/sys_blue</color>
-    <color name="color_sas">#FFE87D</color>
-    <item name="vip_info_item_remove_title" type="color">@color/vip_golden</item>
-    <item name="vip_info_item_remove_bg" type="color">@color/vip_bg</item>
-    <color name="home_top_vip_1">#400A84FF</color>
-    <color name="home_top_vip_2">#405E5CE6</color>
-    <color name="sys_orange_40">#40FF9F0A</color>
-    <color name="home_top_vip_4">#40FF453A</color>
-
     <color name="sys_red">#FF453A</color>
     <color name="sys_orange">#FF9F0A</color>
     <color name="sys_yellow">#FFD60A</color>

@@ -4,18 +4,6 @@
          Rule: all new UI colors should use keys from this file only. -->
 
     <!-- Semantic base colors -->
-    <color name="login_bg_color">#F2F9FF</color>
-    <color name="default_tr">@color/sys_black_00</color>
-    <color name="default_bg">@color/sys_gray6</color>
-    <color name="wk_btn">@color/sys_blue</color>
-    <color name="color_sas">#FFE87D</color>
-    <item name="vip_info_item_remove_title" type="color">@color/vip_golden</item>
-    <item name="vip_info_item_remove_bg" type="color">@color/vip_bg</item>
-    <color name="home_top_vip_1">#26007AFF</color>
-    <color name="home_top_vip_2">#265856D6</color>
-    <color name="sys_orange_40">#28FF9500</color>
-    <color name="home_top_vip_4">#26FF3B30</color>
-
     <color name="sys_red">#FF3B30</color>
     <color name="sys_orange">#FF9500</color>
     <color name="sys_yellow">#FFCC00</color>
@@ -30,22 +18,6 @@
     <color name="sys_brown">#a2845e</color>
     <color name="vip_golden">#6F2C02</color>
     <color name="vip_bg">#FFBE6B</color>
-
-    <color name="vip_receive_title">#FFFADC</color>
-    <color name="intent_debug_bg">#FFF3E0</color>
-    <color name="intent_debug_text">#E65100</color>
-    <color name="login_last_bg">#FFD8D6</color>
-    <color name="vip_gradient_peach_start">#FFBBAB</color>
-    <color name="vip_gradient_peach_end">#FCEBE4</color>
-    <color name="vip_gradient_purple_start">#E1B9FF</color>
-    <color name="vip_gradient_purple_end">#F6EAFF</color>
-    <color name="vip_gradient_blue_start">#C5E0FE</color>
-    <color name="vip_gradient_blue_end">#E7F2FF</color>
-    <color name="vip_gradient_gold_start">#FCE7C5</color>
-    <color name="vip_gradient_gold_end">#FBF2E3</color>
-    <color name="vip_remove_bg_start">#FFE6C5</color>
-    <color name="vip_remove_bg_end">#FCD9A8</color>
-    <color name="outline_gray_979797">#FF979797</color>
 
 
     <color name="sys_gray1">#8E8E93</color>
