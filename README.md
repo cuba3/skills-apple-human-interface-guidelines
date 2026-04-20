@@ -1,115 +1,109 @@
-#项目包含三个主要部分：设计规范文档(docs)、Android资源示例(demo)、技能库(skills)。
+# Apple Human Interface Guidelines for Android
 
-## docs - Apple Human Interface Guidelines 设计文档
+将 Apple 设计规范转换为 Android 可直接使用的资源库。
 
-基于Apple HIG下载的设计规范原始文档，包含以下主题：
+## ✨ 特性
 
-- accessibility.md：无障碍设计指南
-- app-icons.md：应用图标设计
-- branding.md：品牌设计原则
-- color.md：色彩系统规范
-- dark-mode.md：深色模式设计
-- icons.md：图标设计规范
-- images.md：图片资源指南
-- immersive-experiences.md：visionOS沉浸式体验设计
-- inclusion.md：包容性设计原则
-- layout.md：布局系统规范
-- materials.md：材质设计(Liquid Glass等)
-- motion.md：动效设计原则
-- privacy.md：隐私设计指南
-- right-to-left.md：RTL布局设计
-- sf-symbols.md：SF Symbols图标系统
-- spatial-layout.md：visionOS空间布局
-- typography.md：字体排版规范
-- writing.md：界面文案撰写指南
+- 📐 **完整的设计规范** - 基于 Apple HIG 的 Android 实现
+- 🎨 **开箱即用的颜色** - iOS 系统色 + 语义化命名
+- 📏 **标准化尺寸** - 8dp 网格系统 + iOS Dynamic Type 映射
+- 🌙 **深色模式支持** - values-night 自动切换
+- 🤖 **AI 技能库** - 可集成到 AI 编程助手的技能系统
 
-## demo - Android 资源文件示例
+## 📁 项目结构
 
-### values/colors.xml
+```
+skills-apple-human-interface-guidelines/
+├── docs/           # Apple HIG 原始设计文档
+├── demo/           # Android 资源文件示例
+│   ├── values/    # 白天模式 (colors.xml, dimens.xml)
+│   └── values-night/  # 夜间模式
+└── skills/         # AI 技能库
+    └── apple-human-interface-guidelines/
+        ├── colors/
+        ├── typography-and-layout-dimens/
+        └── ... (其他技能)
+```
 
-白天模式颜色配置，包含：
+## 🚀 快速开始
 
-- 系统配色：sys_red、sys_blue、sys_green等12种iOS风格颜色
-- 灰色系：sys_gray1至sys_gray6六个层级
-- 黑白系：sys_black、sys_white
-- VIP配色：vip_golden、vip_bg
-- 渐变色：vip_gradient_peach、vip_gradient_purple、vip_gradient_blue、vip_gradient_gold
-- 透明度颜色：sys_red_20、sys_blue_50、sys_black_25等
+### 1. 克隆仓库
 
-### values-night/colors.xml
+```bash
+git clone https://github.com/cuba3/skills-apple-human-interface-guidelines.git
+cd skills-apple-human-interface-guidelines
+```
 
-夜间模式颜色配置，颜色值对应白天模式调整：
+### 2. 选择使用方式
 
-- 彩色系调整为更适合深色背景的亮色
-- 黑白反向：sys_black变白、sys_white变黑
-- 透明度调整适配深色模式
+#### 方式一：使用 Android 资源文件
 
-### values/dimens.xml
+将 `demo` 目录下的资源文件复制到你的 Android 项目：
 
-统一尺寸规范，基于8dp网格系统：
+```
+你的Android项目/
+└── app/src/main/res/
+    ├── values/
+    │   ├── colors.xml      # 复制到这里
+    │   └── dimens.xml       # 复制到这里
+    └── values-night/
+        └── colors.xml      # 深色模式
+```
 
-- 间距系统：space_0至space_8x，以8dp为基础倍数
-- 圆角系统：radius_m(12dp)、radius_l(24dp)、radius_round_full(512dp)
-- 字号系统：text_display_l(22sp)至text_caption(10sp)，映射iOS Dynamic Type
-- iOS风格别名：largeTitle、title、headline、body、subhead、footnote、caption
-- 布局高度：layout_height_xs(30dp)至layout_height_xxl(96dp)
-- 图标尺寸：icon_xs_16(16dp)至icon_display_60(60dp)
-- 头像尺寸：avatar_xs_24(24dp)至avatar_display_96(96dp)
+#### 方式二：集成 AI 技能库
 
-## skills - Apple HIG 设计规范技能库
+如果你使用的是支持技能系统的 AI 编程助手，可以将技能库复制到对应目录：
 
-技能库将Apple HIG规范转换为可直接使用的Android开发资源，位于skills/apple-human-interface-guidelines 目录：
+```bash
+cp -r skills/apple-human-interface-guidelines {你的项目路径}/skills/
+```
 
-- accessibility：无障碍设计技能
-- app-icons：应用图标技能
-- branding：品牌设计技能
-- colors：iOS系统配色方案技能，包含白天/夜间模式切换、透明度跨平台适配
-- dark-mode：深色模式技能
-- icons：图标设计技能
-- images：图片资源技能
-- immersive-experiences：沉浸式体验技能
-- inclusion：包容性设计技能
-- materials：材质设计技能(Liquid Glass)
-- motion：动效设计技能
-- privacy：隐私设计技能
-- right-to-left：RTL布局技能
-- sf-symbols：SF Symbols图标技能
-- spatial-layout：空间布局技能
-- typography-and-layout-dimens：字体排版和布局尺寸技能，整合Apple HIG Typography和Layout规范到Android dimens
-- writing：界面文案技能
+> 💡 具体路径取决于你的 AI 助手技能库配置，请查阅对应工具的文档。
 
-### 技能使用说明
+## 📦 资源说明
 
-每个技能目录包含SKILL.md文件，记录了：
+### 颜色 (colors.xml)
 
-- Apple HIG核心原则
-- 平台规范参考(iOS、iPadOS、tvOS、visionOS、watchOS、macOS)
-- Android实现示例
-- 使用场景指南
+| 类型 | 示例 | 说明 |
+|------|------|------|
+| iOS 系统色 | `sys_red`, `sys_blue`, `sys_green` | 12 种 iOS 风格颜色 |
+| 灰色系 | `sys_gray1` ~ `sys_gray6` | 6 级灰度 |
+| VIP 配色 | `vip_golden`, `vip_bg` | 金色主题 |
+| 透明度 | `sys_red_20` (32% 透明) | 跨平台透明色 |
 
-### 核心技能说明
+### 尺寸 (dimens.xml)
 
-#### colors技能
+| 类型 | 示例 | 说明 |
+|------|------|------|
+| 间距 | `space_4`, `space_8`, `space_16` | 8dp 网格 |
+| 字号 | `text_title`, `text_body`, `text_caption` | iOS Dynamic Type |
+| 圆角 | `radius_m` (12dp), `radius_l` (24dp) | 统一圆角 |
+| 图标 | `icon_24`, `icon_32`, `icon_48` | 标准图标尺寸 |
 
-提供iOS系统颜色到Android的完整映射：
+## 📖 技能库
 
-- 12种iOS系统色：red、orange、yellow、green、mint、teal、cyan、blue、indigo、purple、pink、brown
-- 6级灰色：sys_gray1至sys_gray6
-- VIP配色：vip_golden、vip_bg
-- 跨平台透明度支持：Android(ARGB)、iOS/CSS(RGBA)、Flutter
+每个技能目录包含 `SKILL.md`，记录了：
 
-#### typography-and-layout-dimens技能
+- 🎯 Apple HIG 核心原则
+- 📱 平台规范参考
+- 🤖 Android 实现示例
+- 💡 使用场景指南
 
-整合字体排版和布局尺寸规范：
+可用技能：
 
-- 字体大小映射iOS Dynamic Type
-- 间距系统基于8dp网格
-- iOS风格别名便于对照设计稿
-- 包含Android TextAppearance样式定义
+- `accessibility` - 无障碍设计
+- `app-icons` - 应用图标
+- `branding` - 品牌设计
+- `colors` - 色彩系统
+- `dark-mode` - 深色模式
+- `icons` - 图标设计
+- `images` - 图片资源
+- `materials` - 材质设计 (Liquid Glass)
+- `motion` - 动效设计
+- `typography-and-layout-dimens` - 字体与布局
+- `writing` - 界面文案
+- ... 更多
 
-## 使用建议
+## 📄 许可证
 
-1. 新开发优先使用demo/values/dimens.xml中的标准化键名
-2. 颜色使用demo/values/colors.xml中的语义化命名
-3. 查阅skills技能库了解设计原则和实现细节
-4. 深色模式自动切换由values-night目录处理
+基于 Apple Human Interface Guidelines。
