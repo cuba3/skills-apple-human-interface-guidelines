@@ -10,20 +10,88 @@ description: "Apple HIG Typography和Layout映射到Android dimens规范。Invok
 ## 核心原则
 
 ### 1. 可读性确保 (Ensuring Legibility)
+
 - 使用大多数人可以轻松阅读的字体大小
+- 遵循各平台的默认和最小字号规范
 - 避免使用Light、Thin、Ultralight等细字重，优先使用Regular、Medium、Semibold、Bold
 - 自定义字体如使用细字重，需增大字号以提高可读性
 
 ### 2. 层级传达 (Conveying Hierarchy)
+
 - 通过字体粗细、大小、颜色强调重要信息
 - 最小化使用字体数量，过多字体类型会混淆信息层级
 - 调整重要内容优先级以响应文本大小变化
 
 ### 3. 系统字体优先 (Using System Fonts)
+
 - iOS/iPadOS/tvOS/visionOS: SF Pro (无衬线)
 - macOS: SF Pro
 - watchOS: SF Compact (SF Compact Rounded用于复杂功能)
 - NY: 衬线字体，与SF配合使用
+
+### 4. 支持Dynamic Type
+
+- iOS/iPadOS/tvOS/visionOS/watchOS支持Dynamic Type
+- 确保布局适配所有字体大小
+- 图标随字体大小自动缩放（使用SF Symbols）
+- 大字号时采用堆叠布局避免截断
+
+## 平台字号规范参考
+
+### 平台默认与最小字号
+
+| 平台       | 默认字号 | 最小字号 |
+|------------|----------|----------|
+| iOS, iPadOS | 17pt    | 11pt     |
+| macOS      | 13pt     | 10pt     |
+| tvOS       | 29pt     | 23pt     |
+| visionOS   | 17pt     | 12pt     |
+| watchOS    | 16pt     | 12pt     |
+
+### iOS Dynamic Type 尺寸表 (标准)
+
+| Style       | Weight   | Size (pt) | Leading (pt) | Emphasized |
+|-------------|----------|-----------|--------------|------------|
+| Large Title | Regular  | 31        | 38           | Bold       |
+| Title 1     | Regular  | 25        | 31           | Bold       |
+| Title 2     | Regular  | 19        | 24           | Bold       |
+| Title 3     | Regular  | 17        | 22           | Semibold   |
+| Headline    | Semibold | 14        | 19           | Semibold   |
+| Body        | Regular  | 14        | 19           | Semibold   |
+| Callout     | Regular  | 13        | 18           | Semibold   |
+| Subhead     | Regular  | 12        | 16           | Semibold   |
+| Footnote    | Regular  | 12        | 16           | Semibold   |
+| Caption 1   | Regular  | 11        | 13           | Semibold   |
+| Caption 2   | Regular  | 11        | 13           | Semibold   |
+
+### iOS Dynamic Type 尺寸表 (无障碍大字 AX1-AX5)
+
+| Style       | Weight   | Size (pt) | Leading (pt) | Emphasized |
+|-------------|----------|-----------|--------------|------------|
+| Large Title | Regular  | 44        | 52           | Bold       |
+| Title 1     | Regular  | 38        | 46           | Bold       |
+| Title 2     | Regular  | 34        | 41           | Bold       |
+| Title 3     | Regular  | 31        | 38           | Semibold   |
+| Headline    | Semibold | 28        | 34           | Semibold   |
+| Body        | Regular  | 28        | 34           | Semibold   |
+| Callout     | Regular  | 26        | 32           | Semibold   |
+| Subhead     | Regular  | 25        | 31           | Semibold   |
+| Footnote    | Regular  | 23        | 29           | Semibold   |
+| Caption 1   | Regular  | 22        | 28           | Semibold   |
+| Caption 2   | Regular  | 20        | 25           | Semibold   |
+
+### watchOS Dynamic Type 尺寸表
+
+| Style       | Weight   | Size (pt) | Leading (pt) | Emphasized |
+|-------------|----------|-----------|--------------|------------|
+| Large Title | Regular  | 30        | 32.5         | Bold       |
+| Title 1     | Regular  | 28        | 30.5         | Semibold   |
+| Title 2     | Regular  | 24        | 26.5         | Semibold   |
+| Title 3     | Regular  | 17        | 19.5         | Semibold   |
+| Headline    | Semibold | 14        | 16.5         | Semibold   |
+| Body        | Regular  | 14        | 16.5         | Semibold   |
+| Caption 1   | Regular  | 13        | 15.5         | Semibold   |
+| Caption 2   | Regular  | 12        | 14.5         | Semibold   |
 
 ## Android Dimen映射
 
@@ -31,180 +99,199 @@ description: "Apple HIG Typography和Layout映射到Android dimens规范。Invok
 
 ```xml
 <!-- Typography (SP) - Apple HIG Typography映射 -->
-<!-- 参考: Apple HIG typography legibility and hierarchy -->
+<!-- 参考: Apple HIG Typography Specifications -->
 <!-- 使用Regular/Medium/Semibold/Bold字重，避免细字重用于小文本 -->
 
-<dimen name="text_display_l">22sp</dimen>    <!-- Large Title级别 -->
-<dimen name="text_title_l">20sp</dimen>      <!-- Title 1 -->
-<dimen name="text_title_m">18sp</dimen>      <!-- Title 2-3 -->
-<dimen name="text_body_l">17sp</dimen>       <!-- Body Large -->
-<dimen name="text_body_m">16sp</dimen>       <!-- Body / Headline -->
-<dimen name="text_body_s">14sp</dimen>       <!-- Subheadline -->
-<dimen name="text_note_m">12sp</dimen>       <!-- Footnote / Caption -->
-<dimen name="text_note_s">11sp</dimen>       <!-- Caption 2 -->
-<dimen name="text_caption">10sp</dimen>     <!-- 最小字号 -->
+<!-- 主标题 -->
+<dimen name="text_large_title">31sp</dimen>   <!-- Large Title: 31pt -->
+<dimen name="text_title_1">25sp</dimen>       <!-- Title 1: 25pt -->
+<dimen name="text_title_2">19sp</dimen>       <!-- Title 2: 19pt -->
+<dimen name="text_title_3">17sp</dimen>       <!-- Title 3: 17pt -->
+
+<!-- 正文 -->
+<dimen name="text_headline">14sp</dimen>     <!-- Headline: 14pt semibold -->
+<dimen name="text_body">14sp</dimen>         <!-- Body: 14pt -->
+<dimen name="text_callout">13sp</dimen>       <!-- Callout: 13pt -->
+<dimen name="text_subhead">12sp</dimen>      <!-- Subhead: 12pt -->
+
+<!-- 辅助文本 -->
+<dimen name="text_footnote">12sp</dimen>      <!-- Footnote: 12pt -->
+<dimen name="text_caption_1">11sp</dimen>     <!-- Caption 1: 11pt -->
+<dimen name="text_caption_2">11sp</dimen>     <!-- Caption 2: 11pt -->
+```
+
+### 无障碍大字 (AX1-AX5)
+
+```xml
+<!-- Accessibility Large Type Sizes -->
+<dimen name="text_large_title_ax">44sp</dimen>   <!-- AX1: 44pt -->
+<dimen name="text_title_1_ax">38sp</dimen>       <!-- AX2: 38pt -->
+<dimen name="text_title_2_ax">34sp</dimen>      <!-- AX3: 34pt -->
+<dimen name="text_title_3_ax">31sp</dimen>      <!-- AX4: 31pt -->
+<dimen name="text_headline_ax">28sp</dimen>     <!-- AX1: 28pt -->
+<dimen name="text_body_ax">28sp</dimen>         <!-- AX1: 28pt -->
 ```
 
 ### iOS风格别名
 
 ```xml
-<!-- iOS风格别名 (iOS Text Style Aliases) -->
-<dimen name="largeTitle">@dimen/text_title_l</dimen>   <!-- 22sp -> 20sp -->
-<dimen name="title">@dimen/text_body_m</dimen>        <!-- 17pt -> 16sp -->
-<dimen name="headline">@dimen/text_body_m</dimen>      <!-- 14pt semibold -> 16sp semibold -->
-<dimen name="body">@dimen/text_body_m</dimen>           <!-- 17pt -> 16sp -->
-<dimen name="subhead">@dimen/text_body_s</dimen>       <!-- 15pt -> 14sp -->
-<dimen name="footnote">@dimen/text_note_m</dimen>        <!-- 13pt -> 12sp -->
-<dimen name="caption">@dimen/text_caption</dimen>       <!-- 12pt -> 10sp -->
+<!-- iOS Text Style Aliases -->
+<dimen name="largeTitle">@dimen/text_large_title</dimen>  <!-- 31sp -->
+<dimen name="title_1">@dimen/text_title_1</dimen>            <!-- 25sp -->
+<dimen name="title_2">@dimen/text_title_2</dimen>            <!-- 19sp -->
+<dimen name="title_3">@dimen/text_title_3</dimen>            <!-- 17sp -->
+<dimen name="headline">@dimen/text_headline</dimen>          <!-- 14sp semibold -->
+<dimen name="body">@dimen/text_body</dimen>                    <!-- 14sp -->
+<dimen name="callout">@dimen/text_callout</dimen>              <!-- 13sp -->
+<dimen name="subhead">@dimen/text_subhead</dimen>              <!-- 12sp -->
+<dimen name="footnote">@dimen/text_footnote</dimen>              <!-- 12sp -->
+<dimen name="caption_1">@dimen/text_caption_1</dimen>          <!-- 11sp -->
+<dimen name="caption_2">@dimen/text_caption_2</dimen>              <!-- 11sp -->
 ```
 
 ### Android语义别名
 
 ```xml
-<!-- Android语义别名 (Android Semantic Aliases) -->
-<dimen name="large_text_size">@dimen/largeTitle</dimen>
-<dimen name="medium_bold_text_size">@dimen/headline</dimen>
-<dimen name="medium_text_size">@dimen/body</dimen>
-<dimen name="small_text_size">@dimen/subhead</dimen>
-<dimen name="medium_subtext_size">@dimen/footnote</dimen>
-<dimen name="small_subtext_size">@dimen/caption</dimen>
+<!-- Android Semantic Aliases -->
+<dimen name="text_display">@dimen/text_large_title</dimen>
+<dimen name="text_headline">@dimen/text_headline</dimen>
+<dimen name="text_title">@dimen/text_title_3</dimen>
+<dimen name="text_body">@dimen/text_body</dimen>
+<dimen name="text_subhead">@dimen/text_subhead</dimen>
+<dimen name="text_caption">@dimen/text_caption_1</dimen>
 ```
-
-## 平台字号规范参考
-
-### iOS/iPadOS 默认与最小字号
-
-| 平台 | 默认字号 | 最小字号 |
-|------|----------|----------|
-| iOS, iPadOS | 17pt | 11pt |
-| macOS | 13pt | 10pt |
-| tvOS | 29pt | 23pt |
-| visionOS | 17pt | 12pt |
-| watchOS | 16pt | 12pt |
-
-### iOS Dynamic Type 尺寸表
-
-| Style | Weight | Size (pt) | Leading (pt) | Emphasized |
-|-------|--------|------------|--------------|------------|
-| Large Title | Regular | 31 | 38 | Bold |
-| Title 1 | Regular | 25 | 31 | Bold |
-| Title 2 | Regular | 19 | 24 | Bold |
-| Title 3 | Regular | 17 | 22 | Semibold |
-| Headline | Semibold | 14 | 19 | Semibold |
-| Body | Regular | 14 | 19 | Semibold |
-| Callout | Regular | 13 | 18 | Semibold |
-| Subhead | Regular | 12 | 16 | Semibold |
-| Footnote | Regular | 12 | 16 | Semibold |
-| Caption 1 | Regular | 11 | 13 | Semibold |
-| Caption 2 | Regular | 11 | 13 | Semibold |
-
-## 字号选择指南
-
-### 标题层级
-- **主标题 (Large Title)**: 20-22sp, Bold
-- **章节标题 (Title 1-3)**: 18-20sp, Regular/Semibold
-- **小标题**: 16sp, Medium/Semibold
-
-### 正文内容
-- **正文 (Body)**: 14-16sp, Regular
-- **次要正文**: 14sp, Regular
-
-### 辅助文本
-- **注释 (Footnote)**: 12sp, Regular
-- **Caption**: 10-11sp, Regular
 
 ## 字重使用规范
 
 ### 推荐字重
+
 - Regular (常规)
 - Medium (中等)
 - Semibold (半粗体)
 - Bold (粗体)
 
 ### 避免使用
+
 - Ultralight
 - Thin
 - Light
 
 原因: 细字重在小字号时难以辨认，影响可读性。
 
+### 强调字重 (Emphasized)
+
+使用 symbolic traits 显示强调变体:
+- SwiftUI: `.bold()` modifier
+- UIKit: `traitBold` in UIFontDescriptor
+
+强调字重可以是: Medium, Semibold, Bold, Heavy
+
+## 行高 (Leading) 映射
+
+```xml
+<!-- Leading (行高) - 基于Apple HIG -->
+<dimen name="leading_large_title">38sp</dimen>   <!-- 31pt文字对应38pt行高 -->
+<dimen name="leading_title_1">31sp</dimen>       <!-- 25pt -> 31pt -->
+<dimen name="leading_title_2">24sp</dimen>       <!-- 19pt -> 24pt -->
+<dimen name="leading_title_3">22sp</dimen>       <!-- 17pt -> 22pt -->
+<dimen name="leading_headline">19sp</dimen>      <!-- 14pt -> 19pt -->
+<dimen name="leading_body">19sp</dimen>          <!-- 14pt -> 19pt -->
+<dimen name="leading_callout">18sp</dimen>       <!-- 13pt -> 18pt -->
+<dimen name="leading_subhead">16sp</dimen>       <!-- 12pt -> 16pt -->
+<dimen name="leading_footnote">16sp</dimen>       <!-- 12pt -> 16pt -->
+<dimen name="leading_caption">13sp</dimen>       <!-- 11pt -> 13pt -->
+```
+
 ## Android TextStyle定义
 
 ```xml
 <!-- styles.xml -->
 <style name="TextAppearance.App.LargeTitle" parent="TextAppearance.Material3.HeadlineLarge">
-    <item name="android:textSize">@dimen/text_display_l</item>
-    <item name="android:fontFamily">sans-serif</item>
+    <item name="android:textSize">@dimen/text_large_title</item>
+    <item name="android:textColor">?attr/colorOnSurface</item>
     <item name="fontFamily">sans-serif</item>
 </style>
 
-<style name="TextAppearance.App.Title" parent="TextAppearance.Material3.TitleMedium">
-    <item name="android:textSize">@dimen/text_title_m</item>
-    <item name="android:fontFamily">sans-serif-medium</item>
+<style name="TextAppearance.App.Title1" parent="TextAppearance.Material3.HeadlineMedium">
+    <item name="android:textSize">@dimen/text_title_1</item>
+    <item name="fontFamily">sans-serif</item>
+</style>
+
+<style name="TextAppearance.App.Title2" parent="TextAppearance.Material3.TitleLarge">
+    <item name="android:textSize">@dimen/text_title_2</item>
+    <item name="fontFamily">sans-serif</item>
+</style>
+
+<style name="TextAppearance.App.Title3" parent="TextAppearance.Material3.TitleMedium">
+    <item name="android:textSize">@dimen/text_title_3</item>
+    <item name="fontFamily">sans-serif-medium</item>
+</style>
+
+<style name="TextAppearance.App.Headline" parent="TextAppearance.Material3.TitleSmall">
+    <item name="android:textSize">@dimen/text_headline</item>
+    <item name="fontFamily">sans-serif-medium</item>
+    <item name="android:textStyle">bold</item>
 </style>
 
 <style name="TextAppearance.App.Body" parent="TextAppearance.Material3.BodyMedium">
-    <item name="android:textSize">@dimen/text_body_m</item>
-    <item name="android:fontFamily">sans-serif</item>
+    <item name="android:textSize">@dimen/text_body</item>
+    <item name="fontFamily">sans-serif</item>
 </style>
 
 <style name="TextAppearance.App.Caption" parent="TextAppearance.Material3.BodySmall">
-    <item name="android:textSize">@dimen/text_caption</item>
-    <item name="android:fontFamily">sans-serif</item>
+    <item name="android:textSize">@dimen/text_caption_1</item>
+    <item name="fontFamily">sans-serif</item>
 </style>
 ```
+
+## 字号选择指南
+
+### 标题层级
+
+| 场景       | 推荐字号        | 字重     |
+|------------|-----------------|----------|
+| 页面主标题 | 25-31sp (Large Title/Title 1) | Regular/Bold |
+| 章节标题   | 17-25sp (Title 2-3)         | Regular/Semibold |
+| 小标题     | 14-17sp (Headline/Title 3)   | Semibold |
+
+### 正文内容
+
+| 场景       | 推荐字号  | 字重     |
+|------------|-----------|----------|
+| 正文内容   | 14sp (Body) | Regular |
+| 次要正文   | 12-13sp (Subhead/Callout) | Regular |
+| 较长正文   | 14sp (Body) | Regular, leading 19sp |
+
+### 辅助文本
+
+| 场景       | 推荐字号   | 字重     |
+|------------|------------|----------|
+| 注释       | 12sp (Footnote) | Regular |
+| Caption    | 11sp (Caption 1-2) | Regular |
 
 ## 使用场景
 
 ### 1. 列表项
-- 主文本: Body (16sp, Regular)
+
+- 主文本: Body (14sp, Regular)
 - 次要文本: Footnote (12sp, Regular)
-- 辅助信息: Caption (10sp, Regular)
+- 辅助信息: Caption (11sp, Regular)
 
 ### 2. 卡片
-- 标题: Title (18sp, Semibold)
-- 内容: Body (16sp, Regular)
-- 元数据: Caption (10sp, Regular)
+
+- 标题: Title 3 (17sp, Semibold)
+- 内容: Body (14sp, Regular)
+- 元数据: Caption (11sp, Regular)
 
 ### 3. 按钮
-- 主按钮文字: 16sp, Medium
-- 次要按钮: 14sp, Regular
+
+- 主按钮文字: 14sp, Medium
+- 次要按钮: 12sp, Regular
 
 ### 4. 导航
+
 - 底部导航: 12sp, Regular
 - Tab文字: 14sp, Medium
-
-## 响应式设计考虑
-
-### 大字号适配
-- 当用户系统字体放大时，考虑布局适应性
-- 避免在受限空间使用固定高度文本容器
-- 长文本使用多行显示，避免截断
-
-### 语义化命名
-使用语义化的dimen名称，便于维护和理解:
-- `text_title_primary` 而非 `text_20sp`
-- `text_body_regular` 而非 `text_16sp`
-
-## 注意事项
-
-1. **避免硬编码字号**: 始终使用dimen资源
-2. **一致性**: 整个应用使用统一的字号层级
-3. **可访问性**: 考虑用户偏好字体大小，提供适当支持
-4. **字重匹配**: 标题和正文使用匹配的字重系统
-5. **行高**: 根据字号调整行高，大字号使用相对较小的行高比
-
-## 快速参考表
-
-| Apple Style | Android Dimen | 推荐用途 |
-|-------------|---------------|----------|
-| Large Title | text_display_l | 页面主标题 |
-| Title 1-2 | text_title_l/m | 章节标题 |
-| Headline | text_body_m | 列表项标题 |
-| Body | text_body_m/s | 正文内容 |
-| Subhead | text_body_s | 辅助说明 |
-| Footnote | text_note_m | 注释/时间戳 |
-| Caption | text_caption | 最小辅助信息 |
 
 ---
 
@@ -232,14 +319,14 @@ description: "Apple HIG Typography和Layout映射到Android dimens规范。Invok
 
 ### 间距使用指南
 
-| 场景 | 推荐间距 |
-|------|----------|
-| 组件内部小间距 | space_0_5x (4dp) |
-| 组件之间标准间距 | space_1x (8dp) |
-| 列表项间距 | space_1_5x (12dp) |
-| 卡片内边距 | space_2x (16dp) |
-| 区块之间 | space_3x (24dp) |
-| 页面大区块 | space_4x (32dp) |
+| 场景             | 推荐间距          |
+|------------------|-------------------|
+| 组件内部小间距   | space_0_5x (4dp)  |
+| 组件之间标准间距 | space_1x (8dp)    |
+| 列表项间距       | space_1_5x (12dp)  |
+| 卡片内边距       | space_2x (16dp)   |
+| 区块之间         | space_3x (24dp)   |
+| 页面大区块       | space_4x (32dp)   |
 
 ### 2. 圆角与描边 (Radius & Stroke)
 
@@ -254,17 +341,17 @@ description: "Apple HIG Typography和Layout映射到Android dimens规范。Invok
 
 ### 圆角使用场景
 
-| 场景 | 圆角值 |
-|------|--------|
-| 圆形按钮/头像 | radius_round_full (512dp) |
-| 卡片/按钮 | radius_m (12dp) |
-| 大圆角容器 | radius_l (24dp) |
-| 分割线粗细 | stroke_width_default (3dp) |
+| 场景               | 圆角值                 |
+|--------------------|-----------------------|
+| 圆形按钮/头像       | radius_round_full (512dp) |
+| 卡片/按钮          | radius_m (12dp)       |
+| 大圆角容器         | radius_l (24dp)       |
+| 分割线粗细         | stroke_width_default (3dp) |
 
 ### 3. 布局高度系统 (Layout Height)
 
 ```xml
-<!-- Layout height system (for list / flow adaptive layouts) -->
+<!-- Layout height system -->
 <dimen name="layout_height_xs">30dp</dimen>
 <dimen name="layout_height_s">40dp</dimen>
 <dimen name="layout_height_m">48dp</dimen>
@@ -275,13 +362,13 @@ description: "Apple HIG Typography和Layout映射到Android dimens规范。Invok
 
 ### 高度选择指南
 
-| 场景 | 高度 |
-|------|------|
-| 单行小元素 | layout_height_s (40dp) |
-| 标准列表项 | layout_height_m (48dp) |
-| 大列表项/按钮 | layout_height_l (56dp) |
-| 顶部/底部栏 | layout_height_xl (64dp) |
-| 大区块容器 | layout_height_xxl (96dp) |
+| 场景               | 高度                |
+|--------------------|---------------------|
+| 单行小元素         | layout_height_s (40dp) |
+| 标准列表项         | layout_height_m (48dp) |
+| 大列表项/按钮      | layout_height_l (56dp) |
+| 顶部/底部栏        | layout_height_xl (64dp) |
+| 大区块容器         | layout_height_xxl (96dp) |
 
 ### 4. 图标尺寸系统 (Icon Size)
 
@@ -296,16 +383,6 @@ description: "Apple HIG Typography和Layout映射到Android dimens规范。Invok
 <dimen name="icon_display_60">60dp</dimen>
 ```
 
-### 图标使用场景
-
-| 场景 | 尺寸 |
-|------|------|
-| 辅助图标/徽标 | icon_xs_16 (16dp) |
-| 行内图标 | icon_s_20 (20dp) |
-| 标准图标 | icon_m_24 (24dp) |
-| 大图标 | icon_l_32 (32dp) |
-| 展示图标 | icon_xl_40 (40dp) |
-
 ### 5. 头像尺寸系统 (Avatar Size)
 
 ```xml
@@ -319,77 +396,29 @@ description: "Apple HIG Typography和Layout映射到Android dimens规范。Invok
 <dimen name="avatar_display_96">96dp</dimen>
 ```
 
-### 头像使用场景
-
-| 场景 | 尺寸 |
-|------|------|
-| 列表内小头像 | avatar_xs_24 (24dp) |
-| 标准列表头像 | avatar_s_32 (32dp) |
-| 详情页头像 | avatar_m_40 (40dp) |
-| 个人资料头像 | avatar_l_48 (48dp) |
-| 大展示头像 | avatar_xl_64 (64dp) |
-
 ## Apple HIG Layout 核心原则
 
 ### 1. 视觉层级 (Visual Hierarchy)
+
 - 通过负空间、背景形状、颜色区分元素关联性
 - 重要信息给予足够空间便于查找
 - 内容延伸至屏幕边缘
 
 ### 2. 对齐 (Alignment)
+
 - 组件对齐便于扫描和理解组织结构
 - 配合缩进传达信息层级
 
 ### 3. 间距 (Spacing)
+
 - 控制周围空间足够便于使用
 - 将相关控件分组到逻辑区域
 
 ### 4. 适配性 (Adaptability)
+
 - 尊重系统安全区域、边距和引导线
 - 支持横竖屏切换
 - 支持Dynamic Type文字大小变化
-
-## 平台布局规范
-
-### iOS
-- 全屏显示填充到边缘
-- 滚动布局延续到屏幕底部和侧边
-- 按钮避免全宽，使用系统边距
-
-### tvOS
-- 内容距屏幕边缘: 上下60pt，左右80pt
-- 焦点元素间距避免重叠
-
-### visionOS
-- 交互组件中心至少60pt间隔
-- 内容保持在窗口边界内
-
-### watchOS
-- 内容从屏幕一边延伸到另一边
-- 避免超过2-3个并排控件
-
-## 组件布局模板
-
-### 列表项布局
-```
-[头像/图标] [主标题]          [辅助信息]
-space_1x    space_2x         space_2x
-```
-
-### 卡片布局
-```
-[图片]
-[标题]                    space_1_5x
-[副标题/描述]              space_1x
-[底部按钮/元数据]          space_2x
-```
-
-### 表单布局
-```
-[标签]                    space_1x
-[输入框]                  space_2x
-[错误提示]                space_0_5x
-```
 
 ## 响应式布局注意事项
 
@@ -397,3 +426,41 @@ space_1x    space_2x         space_2x
 2. **Size Class**: iPad横屏使用Regular宽高，iPhone竖屏使用Compact宽
 3. **Grid**: tvOS根据屏幕宽度自动调整列数
 4. **断点**: 组件在小屏使用紧凑间距，大屏使用宽松间距
+5. **大字号适配**: 长文本使用多行显示，避免截断，考虑堆叠布局
+
+## 快速参考表
+
+### Typography
+
+| Apple Style    | Android Dimen      | 推荐用途     |
+|----------------|--------------------|--------------|
+| Large Title    | text_large_title  | 页面主标题   |
+| Title 1        | text_title_1       | 章节标题     |
+| Title 2        | text_title_2       | 章节标题     |
+| Title 3        | text_title_3       | 小标题       |
+| Headline       | text_headline      | 列表项标题   |
+| Body           | text_body          | 正文内容     |
+| Callout        | text_callout       | 辅助说明     |
+| Subhead        | text_subhead       | 次要文本     |
+| Footnote       | text_footnote      | 注释/时间戳  |
+| Caption 1/2    | text_caption_1     | 最小辅助信息 |
+
+### Layout
+
+| 场景             | 推荐尺寸              |
+|------------------|-----------------------|
+| 标准间距         | space_1x (8dp)        |
+| 卡片内边距       | space_2x (16dp)       |
+| 卡片圆角         | radius_m (12dp)        |
+| 标准图标         | icon_m_24 (24dp)       |
+| 列表项高度       | layout_height_m (48dp) |
+| 按钮高度         | layout_height_l (56dp) |
+
+## 注意事项
+
+1. **避免硬编码字号**: 始终使用dimen资源
+2. **一致性**: 整个应用使用统一的字号层级
+3. **可访问性**: 考虑用户偏好字体大小，提供Dynamic Type支持
+4. **字重匹配**: 标题和正文使用匹配的字重系统
+5. **行高**: 根据字号调整行高，大字号使用相对较小的行高比
+6. **响应式**: 大字号时调整布局，避免截断和重叠
