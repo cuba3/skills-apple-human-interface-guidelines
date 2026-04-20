@@ -5,7 +5,7 @@
 
     <!-- Semantic base colors -->
     <color name="login_bg_color">#F2F9FF</color>
-    <color name="default_tr">@color/transparent_black_00</color>
+    <color name="default_tr">@color/sys_black_00</color>
     <color name="default_bg">@color/sys_gray6</color>
     <color name="wk_btn">@color/sys_blue</color>
     <color name="color_sas">#FFE87D</color>
@@ -65,34 +65,34 @@
     <color name="sys_black_75">#C0000000</color>
     <color name="sys_black_80">#CC000000</color>
 
-    <color name="transparent_black_00">#00000000</color>
-    <color name="transparent_black_10">#1A000000</color>
+    <color name="sys_black_00">#00000000</color>
+    <color name="sys_black_10">#1A000000</color>
 
-    <color name="transparent_white_25">#40FFFFFF</color>
-    <color name="transparent_white_12">#1FFFFFFF</color>
-    <color name="transparent_white_50">#80FFFFFF</color>
-    <color name="transparent_white_75">#C0FFFFFF</color>
+    <color name="sys_white_25">#40FFFFFF</color>
+    <color name="sys_white_12">#1FFFFFFF</color>
+    <color name="sys_white_50">#80FFFFFF</color>
+    <color name="sys_white_75">#C0FFFFFF</color>
 
-    <color name="transparent_blue_10">#1a007AFF</color>
-    <color name="transparent_blue_20">#33007AFF</color>
-    <color name="transparent_blue_50">#80007AFF</color>
+    <color name="sys_blue_10">#1a007AFF</color>
+    <color name="sys_blue_20">#33007AFF</color>
+    <color name="sys_blue_50">#80007AFF</color>
     
-    <color name="transparent_red_25">#80FF3B30</color>
-    <color name="transparent_red_50">#40FF3B30</color>
+    <color name="sys_red_25">#80FF3B30</color>
+    <color name="sys_red_50">#40FF3B30</color>
 
-    <color name="transparent_orange_25">#40FF9500</color>
-    <color name="transparent_orange_50">#80FF9500</color>
+    <color name="sys_orange_25">#40FF9500</color>
+    <color name="sys_orange_50">#80FF9500</color>
 
-    <color name="transparent_yellow_25">#40FFCC00</color>
-    <color name="transparent_yellow_50">#80FFCC00</color>
+    <color name="sys_yellow_25">#40FFCC00</color>
+    <color name="sys_yellow_50">#80FFCC00</color>
 
-    <color name="transparent_brown_25">#40a2845e</color>
-    <color name="transparent_brown_50">#80a2845e</color>
+    <color name="sys_brown_25">#40a2845e</color>
+    <color name="sys_brown_50">#80a2845e</color>
 
-    <color name="transparent_cyan_25">#4032ade6</color>
-    <color name="transparent_cyan_50">#8032ade6</color>
+    <color name="sys_cyan_25">#4032ade6</color>
+    <color name="sys_cyan_50">#8032ade6</color>
 
-    <color name="transparent_green_25">#4034C759</color>
-    <color name="transparent_green_50">#8034C759</color>
+    <color name="sys_green_25">#4034C759</color>
+    <color name="sys_green_50">#8034C759</color>
 
 </resources>
