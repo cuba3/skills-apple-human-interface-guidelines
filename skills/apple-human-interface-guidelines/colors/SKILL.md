@@ -1,5 +1,5 @@
 ---
-name: "ios-system-colors"
+name: "apple-human-interface-guidelines-colors"
 description: "iOS系统配色方案，包含Apple HIG颜色和VIP配色，支持白天/夜间模式切换。Invoke when user needs iOS-style colors for Android app."
 ---
 
@@ -26,7 +26,7 @@ description: "iOS系统配色方案，包含Apple HIG颜色和VIP配色，支持
 | sys_pink | #FF2D55 |
 | sys_brown | #a2845e |
 
-### VIP配色
+### VIP配色 (opn48 design)
 
 | 颜色名称 | Hex值 |
 |----------|-------|
@@ -72,7 +72,7 @@ description: "iOS系统配色方案，包含Apple HIG颜色和VIP配色，支持
 | sys_pink | #FF375F |
 | sys_brown | #AC8E68 |
 
-### VIP配色
+### VIP配色 (opn48 design)
 
 | 颜色名称 | Hex值 |
 |----------|-------|
@@ -137,14 +137,30 @@ description: "iOS系统配色方案，包含Apple HIG颜色和VIP配色，支持
 
 ---
 
-## 半透明颜色
+## 透明度颜色
 
 基于已有配色，在16进制RGB前增加两位十六进制数表示透明度。
 
+### 跨平台透明度格式差异
+
+| 平台 | 格式 | 透明度位置 | 示例 |
+|------|------|-----------|------|
+| Android (ColorInt) | ARGB | 前两位 | #AA007AFE |
+| iOS (UIColor) | RGBA | 后两位 | #007AFEAA |
+| CSS / Web | RGBA | 后两位 | #007AFEAA |
+| Flutter | 根据传入方式 | - | Color(0xAA007AFE) |
+
+### 格式说明
+
+- **透明度通用规则**: 00 = 完全透明，FF = 完全不透明
+- **Android (ARGB)**: 透明度在前，RGB在后
+- **iOS / CSS / Web (RGBA)**: RGB在前，透明度在后
+
 ### 透明度对照表
 
-| 透明度 | 十六进制 |
-|--------|----------|
+| 透明度 | 十六进制值 |
+|--------|------------|
+| 0% (完全透明) | 00 |
 | 5% | 0D |
 | 10% | 1A |
 | 20% | 33 |
@@ -155,6 +171,19 @@ description: "iOS系统配色方案，包含Apple HIG颜色和VIP配色，支持
 | 70% | B3 |
 | 80% | CC |
 | 90% | E6 |
+| 100% (完全不透明) | FF |
+
+### 跨平台转换示例
+
+以 50% 透明度 的 #007AFF (蓝色) 为例：
+
+| 平台 | 格式 | 颜色值 |
+|------|------|--------|
+| Android (XML) | ARGB | #80007AFF |
+| Android (Kotlin Color Int) | ARGB | 0x80007AFF |
+| iOS (Swift) | RGBA | Color(red: 0.0, green: 0.478, blue: 1.0, opacity: 0.5) 或 #007AFF80 |
+| CSS / Web | RGBA | rgba(0, 122, 255, 0.5) 或 #007AFF80 |
+| Flutter | 根据使用 | Color(0x80007AFF) |
 
 ### 命名规则
 
@@ -192,9 +221,50 @@ description: "iOS系统配色方案，包含Apple HIG颜色和VIP配色，支持
 <color name="sys_blue_50">#800A84FF</color>
 ```
 
+### CSS / Web 使用示例
+
+```css
+/* CSS 变量方式 (推荐) */
+:root {
+    --sys-red: #FF3B30;
+    --sys-red-50: rgba(255, 59, 48, 0.5);
+    --sys-blue: #007AFF;
+    --sys-blue-50: rgba(0, 122, 255, 0.5);
+}
+
+/* 直接使用 */
+.button-overlay {
+    background-color: rgba(255, 59, 48, 0.2);
+}
+
+/* 使用8位十六进制 (iOS/CSS兼容) */
+.card-overlay {
+    background-color: #FF3B3033; /* 20% 透明度 */
+}
+```
+
+### Flutter 使用示例
+
+```dart
+// 使用ARGB格式 (与Android一致)
+Color sysRed20 = Color(0x33FF3B30);
+Color sysBlue50 = Color(0x80007AFF);
+
+// 使用RGBA参数
+Color sysBlue50Alt = Color.fromARGB(128, 0, 122, 255);
+```
+
 ### 使用场景
 
 1. **遮罩层**: 半透明黑色/白色覆盖层
 2. **图标填充**: 图标使用半透明颜色作为填充
 3. **背景装饰**: 卡片弱化背景色
 4. **边框/分割线**: 使用低透明度颜色作为细微分割
+
+### 注意事项
+
+1. **Android XML**: 透明度放在RGB前面 (ARGB)
+2. **iOS / CSS**: 透明度放在RGB后面 (RGBA)
+3. **Flutter**: Color() 构造函数使用 ARGB 格式 (0xAARRGGBB)
+4. **Web 开发**: 推荐使用 `rgba()` 或 `hsla()` 函数，兼容性好
+5. **设计工具**: Sketch/Figma 导出通常是 RGBA 格式，Android 使用需转换
